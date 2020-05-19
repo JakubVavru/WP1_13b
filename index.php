@@ -1,7 +1,8 @@
 <?php
 
 $submit = filter_input(INPUT_POST, 'submit');
-
+$email = filter_input(INPUT_POST, 'email');
+$gender = filter_input(INPUT_POST, 'gender');
 var_dump($submit);
 
 ?>
@@ -13,15 +14,7 @@ var_dump($submit);
     <title>Document</title>
 </head>
 <body>
-<?php
 
-if(isset($submit)) {
-    echo "Formulář byl odeslán!";
-} else {
-    echo "Stránka byla načtena bez formuláře.";
-}
-
-?>
 <form action="index.php" method="post">
 <label for="email">E-mail</label>
 <input type="email" name="email" id="email">
@@ -41,6 +34,20 @@ if(isset($submit)) {
 
 <input type="submit" name="submit" value="Odeslat">
 </form>
+
+<?php
+
+if(isset($submit)) {
+?> <h2>Formulář byl odeslán</h2>
+Email: <?= $email ?></br>
+Pohlaví: <?= $gender ?>
+<?php
+} else {?>
+   <h2>Stránka byla načtena bez formuláře</h2>
+   <?php
+}
+
+?>
 
 </body>
 </html>
