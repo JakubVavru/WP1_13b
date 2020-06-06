@@ -3,7 +3,6 @@
 $submit = filter_input(INPUT_POST, 'submit');
 $email = filter_input(INPUT_POST, 'email');
 $gender = filter_input(INPUT_POST, 'gender');
-var_dump($submit);
 
 ?>
 <!DOCTYPE html>
